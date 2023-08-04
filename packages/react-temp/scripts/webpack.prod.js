@@ -14,13 +14,12 @@ module.exports = merge(getBaseCfg(false), {
   /**
    * @description 优化方案配置
    * @param minimizer |压缩方案配置
-   * @param CssMinimizerPlugin |压缩css
    * @param TerserPlugin |压缩JS
-   * @param splitChunks | (https://webpack.docschina.org/plugins/split-chunks-plugin)
+   * @param CssMinimizerPlugin |压缩css
+   * @param splitChunks |代码切片 (https://webpack.docschina.org/plugins/split-chunks-plugin)
    */
   optimization:{
     minimizer: [
-      new CssMinimizerPlugin(),
       new TerserPlugin({
         parallel: true, // 并行压缩
         terserOptions: {
@@ -28,6 +27,9 @@ module.exports = merge(getBaseCfg(false), {
                 pure_funcs: ["console.log", "console.warn"]
             },
         },
+      }),
+      new CssMinimizerPlugin({
+        parallel: true
       }),
     ],
     splitChunks: {
