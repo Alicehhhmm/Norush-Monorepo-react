@@ -5,9 +5,7 @@
  * @param {Object} module |核心模块化配置(万物皆可模块化)
  * @param {Object} resolve |解析配置
  * @param {Array} plugins |核心模块辅助插件配置
- * @param MiniCssExtractPlugin |提取 CSS 到一个单独的文件中
  * @param clean|clean-webpack-plugin(w4) |删除（清理）构建目录
- * @param HTMLWebpackPlugin |打包结束后⾃动生成⼀个html⽂文件，并把打包生成的JS模块引⼊到该html中
  */
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
@@ -154,6 +152,8 @@ module.exports = (isDev) => ({
 
   /**
    * @description plugins|插件配置
+   * @param DefinePlugin|允许在编译时创建配置的全局对象
+   * @param MiniCssExtractPlugin |提取 CSS 到一个单独的文件中
    * @param HTMLWebpackPlugin |根据指定的模板生成HTML文件(含打包后注入的JS)|minify(HTML压缩优化)
    */
   plugins: [
