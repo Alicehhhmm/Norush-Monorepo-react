@@ -11,12 +11,17 @@
  module.exports = merge(getBaseCfg(true), {
      devtool: "source-map",
      devServer: {
-         port: 8297,
-         compress: false, //|压缩
-         hot: true, //|热更新
-         historyApiFallback: true,//| 解决404的问题
-         static: {
-             directory: path.join(__dirname, '../public')
-         }
+        port: 8297,
+        compress: false, //|压缩
+        hot: true, //|热更新
+        historyApiFallback: true,//| 解决404的问题
+        static: {
+            directory: path.join(__dirname, '../public')
+        },
+        proxy: {
+        '/api': {
+            target: 'https://api.github.com'
+        }
+      }
      }
  })

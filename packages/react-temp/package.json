@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server -c scripts/webpack.dev.js",
-    "start:prod": "cross-env PRIMARY=blue webpack-dev-server -c scripts/webpack.dev.js",
+    "start:prod": "cross-env PRIMARY=blue webpack-dev-server -c scripts/webpack.prod.js",
     "build": "webpack -c scripts/webpack.prod.js"
   },
   "keywords": [],

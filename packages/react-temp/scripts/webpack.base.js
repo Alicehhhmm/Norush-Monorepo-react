@@ -13,13 +13,28 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 
 module.exports = (isDev) => ({
-  entry: path.join(__dirname, '../src/index.tsx'),
   mode: isDev ? "development" : "production",
+  entry: path.join(__dirname, '../src/index.tsx'),
   output: {
       filename: 'static/js/[name].[chunkhash:8].js',
       path: path.join(__dirname, "../dist"),
       clean: true, //w4 - clean-webpack-plugin
       publicPath: '/'
+  },
+
+  /**
+   * @description 入口文件限制
+   * @param assetFilter |只给出 js 文件的性能提示
+   * @official https://webpack.docschina.org/configuration/performance/#performance
+   */
+  performance: {
+    hints: 'warning',
+    maxEntrypointSize: 40000000,
+    maxAssetSize: 20000000,
+    
+    assetFilter: function (assetFilename) {
+      return assetFilename.endsWith('.js')
+    }
   },
 
   /**
@@ -148,6 +163,7 @@ module.exports = (isDev) => ({
       "@": path.join(__dirname, '../src')
     },
   },
+  
 
 
   /**
@@ -173,5 +189,6 @@ module.exports = (isDev) => ({
     new webpack.DefinePlugin({
       'process.env.PRIMARY': JSON.stringify(process.env.PRIMARY)
     })
+    
   ]
 })

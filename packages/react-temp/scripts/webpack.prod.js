@@ -35,7 +35,7 @@ module.exports = merge(getBaseCfg(false), {
     splitChunks: {
       // 缓存配置
       chunks: 'async',
-      minSize: 20000,
+      minSize: 40000,
       minChunks: 1,
       cacheGroups: {
           vendors: {
