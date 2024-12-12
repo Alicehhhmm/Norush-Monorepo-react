@@ -1,7 +1,9 @@
-
 <p align="left">
   这是一个基于Webpack、pnpm、React 的Monorepo架构包管理案例。
-内含开发中常见的相关配置，如Babel,tailwind,TypeScript 等基础配置
+内含开发中常见的配置，如 Babel、tailwindcss、TypeScript、husky、commitlint、elsint、pretter 等基础配置
+
+以及相关Webpack打包优化案例
+
 </p>
 <br/>
 <p align="center">
@@ -12,23 +14,24 @@
 </p>
 <br/>
 
-# 📦installation 
-You can clone it for local development:
+# 📦installation
+
+You can clone it for local development: <br/>
 [![][pnpm-shield]][pnpm-link]
 
 ```js
 git clone https://github.com/Alicehhhmm/Norush-Monorepo-react.git
 cd Norush-Monorepo-react
 pnpm install
-pnpm start 
+pnpm start
 // or
 pnpm run start
 ```
 
 # 💻Common command
 
-
 - 给根目录安装依赖
+
 ```bash
 pnpm add <package-name> -w
 # or
@@ -42,15 +45,18 @@ pnpm add <package-name> -F <workspace-name>
 # or
 pnpm add <package-name> --filter <workspace-name>
 ```
+
 例如: 给`@norush/react.temp `包添加`dayjs`依赖
+
 ```bash
-pnpm add dayjs -F @norush/react.temp 
+pnpm add dayjs -F @norush/react.temp
 ```
+
 - 子包之间的引用
+
 ```bash
-pnpm add @norush/shared -F @norush/react.temp 
+pnpm add @norush/shared -F @norush/react.temp
 ```
-  
 
 # 📝 License
 
