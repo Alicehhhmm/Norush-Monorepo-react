@@ -12,6 +12,7 @@
 		"template"
 	],
 	"scripts": {
+		"start": "pnpm -F react-temp start",
 		"prepare": "husky install"
 	},
 	"devDependencies": {
