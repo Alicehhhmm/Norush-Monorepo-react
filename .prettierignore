@@ -1,0 +1,25 @@
+# The Prettierignore from RoseUi
+# ----------------------------------------------------------------
+
+# Default general ".file" 
+**/.git
+**/.svn
+**/.hg
+.idea
+.vscode
+.history
+.DS_Store
+
+# Ignore artifacts:
+build
+coverage
+
+# Dependencies：
+**/node_modules
+*.log
+*.lock
+package-lock.json
+
+# Ignore all HTML files:
+**/*.html
+
